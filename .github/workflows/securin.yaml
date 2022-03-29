@@ -20,7 +20,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build with Maven
       run: mvn -q --batch-mode --update-snapshots verify
-    - name: Docker Image with build arguments
     - name: Scan Initiated
       id: sec_scan_init
       run: "docker login --username  ${{fromJson(steps.auth_token.outputs.authTokenJson).user}}\
